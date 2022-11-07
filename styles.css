@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+}
+#timeline{
+    width: 80%;
+    height: 80%;
+    min-width: 300px;
+    min-height: 700px;
+    position: relative;
+    left: 10%;
+    top:10%;
+    padding: 1%;
+    background-color:#090979;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.card{
+    font-size: small;
+    min-width: 250px;
+    min-height: 170px;
+    width: 90%;
+    height: 23%;
+    background-color:#020024;
+    color: white;
+    padding: 1%;
+    border-radius: 10px;
+    margin-left: 5%;
+}
+#timeline .card:last-child{
+    margin-bottom: 0%;
+}
+#timeline::before{
+    content: '';
+    height: 95%;
+    width: 5px;
+    background:var(--color,linear-gradient(
+        to top,
+        white 0%
+        white 100%
+    ));
+    position: absolute;
+    left:1%;
+}
+.card::before{
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: #1E8C45;
+    border-radius: 50%;
+    position: absolute;
+    left: 0.2%;
+}
+.heading{
+    font-size: large;
+    text-decoration:underline;
+}
+.content{
+    padding-top: 3%;
+    font-style: italic;
+    text-align: justify;
+}
+
+
+@media(min-width:426px){
+    #timeline{        
+        min-width: 550px;
+    }
+    .card{
+        min-width: 250px;
+        width: 48%;
+        margin-left: 0%;
+        font-size: small;
+    }
+    #timeline .card:nth-child(even){
+        position: relative;
+        left:52%;
+    }
+    #timeline::before{
+        left: 50%;
+    }
+    .card:nth-child(odd)::before{
+        position: absolute;
+        left: 49.8%;
+    }
+    .card:nth-child(even)::before{
+        position: absolute;
+        left: -4.6%;
+    }
+}
+
+@media(min-width:1440px){
+    .card{
+        font-size: medium   ;
+    }
+}
